@@ -23,7 +23,7 @@ const getTokenPair=async(user)=>{
 };
 
 const validarUsuario=async(loginData)=> {
-    //console.log('Tratando de validar Login...');
+    console.log('Tratando de validar Login en validarUsuario...');
     const usr=await Usuario.findOne({usuario:loginData.usuario});
     if(!usr) throw new Error ('Usuario incorrecto.');
     console.log('Validando Login...');

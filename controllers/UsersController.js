@@ -105,5 +105,24 @@ router.post('/delete',async(request,response)=>{
 });
 
 
+router.post('/actualiza_datos_usuario',async(request,response)=>{
+    try{
+        let body = request.body;
+        Usuario.updateOne({usuario: body.usuario }, {
+            $set: {
+                usuario: body.usuario,
+                contrasena: body.contrasena,
+                nombres: body.nombres
+            }
+        }).exec();
+        response.json({mensaje:'usuario actualizado con éxito...'});
+    }
+    catch(e){
+        console.log("Error actualizando usuario ...");
+        console.log(e);
+        response.status(500).send("Error al actualizar usuario");
+    }
+});
+
 
 module.exports=router;

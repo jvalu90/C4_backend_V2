@@ -38,8 +38,8 @@ usuarioSchema.methods.compararPasswords=async function(passwordTextoPlano){
     console.log('Comparando contraseñas...');
     // password texplano es el que se recibe
     // this.contrasena es la contraseña ya encriptada
-    //console.log(passwordTextoPlano);
-    //console.log(this.contrasena);
+    console.log(passwordTextoPlano);
+    console.log(this.contrasena);
     return await compare(passwordTextoPlano,this.contrasena);
 };
 
